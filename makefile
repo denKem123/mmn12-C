@@ -1,2 +1,2 @@
-all: q1.c
-	gcc q1.c -ansi -Wall -o q1.o
+all: q.c
+	gcc q.c -Wall -ansi -pedantic -o q.o
