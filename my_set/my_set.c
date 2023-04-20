@@ -82,8 +82,5 @@ void resize_set(struct Set set)
     set.length = SIZE_ENLARGE(set.length);
     int *numbersHolder = (int *)realloc(set.numbers, set.length * sizeof(int));
     if (!numbersHolder)
-    {
         set.numbers = numbersHolder;
-        free(numbersHolder);
-    }
 }
