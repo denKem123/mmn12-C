@@ -4,7 +4,7 @@
 #define RESIZE_BY 1
 #define SIZE_ENLARGE(length) ((length) + RESIZE_BY)
 
-typedef struct Set
+struct Set
 {
     int *numbers;
     int length;
