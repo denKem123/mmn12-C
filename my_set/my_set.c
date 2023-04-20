@@ -53,6 +53,7 @@ struct Set get_set(struct Set all_nums)
         isNumFound = 0;
         resize_set(&all_nums);
         all_nums.numbers[all_nums.length - 1] = num;
+        print_set(all_nums);
 
         for (i = 0; i < set.length; i++)
             isNumFound = isNumFound || set.numbers[i] == num ? 1 : 0;
