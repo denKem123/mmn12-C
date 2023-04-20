@@ -52,17 +52,16 @@ struct Set get_set(struct Set all_nums)
         scanf("%d", &num);
         isNumFound = 0;
         resize_set(all_nums);
-        all_nums.numbers[all_nums.length - 1] = num;
-        printf("%d", num);
+        /*all_nums.numbers[all_nums.length - 1] = num;*/
 
         for (i = 0; i < set.length; i++)
             isNumFound = isNumFound || set.numbers[i] == num ? 1 : 0;
 
-        if (!isNumFound)
+        /*if (!isNumFound)
         {
             resize_set(set);
             set.numbers[set.length - 1] = num;
-        }
+        }*/
     } while (num != EOF);
 
     return set;
