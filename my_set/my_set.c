@@ -13,14 +13,14 @@ typedef struct Set
 struct Set get_set(struct Set *all_nums);
 void print_set(struct Set set);
 void resize_set(struct Set *set);
+struct Set initialize_set();
 
 int main()
 {
     struct Set all_nums;
     struct Set set;
 
-    all_nums.length = 0;
-    all_nums.numbers = (int *)malloc(0);
+    all_nums = initialize_set();
 
     set = get_set(&all_nums);
     printf("all numbers:\n");
@@ -40,11 +40,8 @@ int main()
 struct Set get_set(struct Set *all_nums)
 {
     int num, i, isNumFound = 0;
-    /*initialize the set*/
     struct Set set;
-    set.length = 0;
-    set.numbers = (int *)malloc(0);
-
+    set = initialize_set();
     printf("%s", "Enter as many numbers as you want to create a set out of them,\nto stop please enter EOF:\n");
 
     while (scanf("%d", &num) != EOF && num != EOF)
@@ -71,7 +68,7 @@ struct Set get_set(struct Set *all_nums)
 */
 void print_set(struct Set set)
 {
-    
+
     int i;
     for (i = 0; i < set.length; i++)
     {
@@ -91,4 +88,14 @@ void resize_set(struct Set *set)
     {
         set->numbers = numbersHolder;
     }
+}
+
+struct Set initialize_set()
+{
+    /*initialize the set*/
+    struct Set set;
+    set.length = 0;
+    set.numbers = (int *)malloc(0);
+
+    return set;
 }
