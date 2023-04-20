@@ -52,7 +52,7 @@ struct Set get_set(struct Set all_nums)
         resize_set(all_nums);
         all_nums.numbers[all_nums.length - 1] = num;
 
-        for (int i = 0; i < set.length; i++)
+        for (i = 0; i < set.length; i++)
             isNumFound = isNumFound || set.numbers[i] == num ? 1 : 0;
 
         if (!isNumFound)
