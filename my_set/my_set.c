@@ -17,10 +17,12 @@ void resize_set(struct Set set);
 int main()
 {
     struct Set all_nums;
+    struct Set set;
+
     all_nums.length = 0;
     all_nums.numbers = (int *)malloc(0);
 
-    struct Set set = get_set(all_nums);
+    set = get_set(all_nums);
     printf("all numbers:\n");
     print_set(all_nums);
 
@@ -37,19 +39,18 @@ int main()
 */
 struct Set get_set(struct Set all_nums)
 {
-
+    int num, i, isNumFound = 0;
     /*initialize the set*/
     struct Set set;
     set.length = 0;
     set.numbers = (int *)malloc(0);
 
     printf("%s", "Enter as many numbers as you want to create a set out of them,\nto stop please enter EOF:");
-    int num;
+
     do
     {
         scanf("%d", &num);
-        int i, isNumFound = 0;
-
+        isNumFound = 0;
         resize_set(all_nums);
         all_nums.numbers[all_nums.length - 1] = num;
 
@@ -82,8 +83,9 @@ void print_set(struct Set set)
 
 void resize_set(struct Set set)
 {
+    int *numbersHolder;
     set.length = SIZE_ENLARGE(set.length);
-    int *numbersHolder = (int *)realloc(set.numbers, set.length * sizeof(int));
+    numbersHolder = (int *)realloc(set.numbers, set.length * sizeof(int));
     if (!numbersHolder)
         set.numbers = numbersHolder;
 }
