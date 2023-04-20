@@ -47,9 +47,8 @@ struct Set get_set(struct Set *all_nums)
 
     printf("%s", "Enter as many numbers as you want to create a set out of them,\nto stop please enter EOF:\n");
 
-    do
+    while (scanf("%d", &num) != EOF && num != EOF)
     {
-        scanf("%d", &num);
         isNumFound = 0;
         resize_set(all_nums);
         all_nums->numbers[all_nums->length - 1] = num;
@@ -63,7 +62,7 @@ struct Set get_set(struct Set *all_nums)
             set.numbers[set.length - 1] = num;
         }
         print_set(set);
-    } while (num != EOF);
+    }
 
     return set;
 }
@@ -73,8 +72,7 @@ struct Set get_set(struct Set *all_nums)
 */
 void print_set(struct Set set)
 {
-    printf("%d", set.length);
-    /*
+    
     int i;
     for (i = 0; i < set.length; i++)
     {
@@ -82,7 +80,7 @@ void print_set(struct Set set)
             printf(",");
         printf("%d", set.numbers[i]);
     }
-    */
+    printf("\n");
 }
 
 void resize_set(struct Set *set)
