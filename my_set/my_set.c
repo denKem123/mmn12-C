@@ -61,7 +61,6 @@ struct Set get_set(struct Set *all_nums)
             resize_set(&set);
             set.numbers[set.length - 1] = num;
         }
-        print_set(set);
     }
 
     return set;
