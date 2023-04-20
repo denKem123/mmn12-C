@@ -70,8 +70,8 @@ struct Set get_set(struct Set all_nums)
 */
 void print_set(struct Set set)
 {
-    int i = 0;
-    for (i; i < set.length; i++)
+    int i;
+    for (i = 0; i < set.length; i++)
     {
         if (i)
             printf(",");
