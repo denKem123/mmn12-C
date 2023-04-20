@@ -51,6 +51,7 @@ struct Set get_set(struct Set all_nums)
     {
         scanf("%d", &num);
         isNumFound = 0;
+        printf("%d", all_nums.numbers);
         resize_set(all_nums);
         all_nums.numbers[all_nums.length - 1] = num;
 
