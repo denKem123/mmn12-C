@@ -9,7 +9,7 @@ typedef struct Set
     int length;
 };
 
-struct Set *get_set(struct Set all_nums);
+struct Set get_set(struct Set all_nums);
 void print_set(struct Set set);
 void resize_set(struct Set set);
 
@@ -19,14 +19,14 @@ int main()
     all_nums.length = 0;
     all_nums.numbers = (int *)malloc(0);
 
-    struct Set *set = get_set(all_nums);
+    struct Set set = get_set(all_nums);
     printf("all numbers:\n");
     print_set(all_nums);
 
     printf("set's numbers:\n");
-    print_set(*set);
+    print_set(set);
 
-    free(set->numbers);
+    free(set.numbers);
     free(all_nums.numbers);
     return 0;
 }
@@ -34,7 +34,7 @@ int main()
 /*
 
 */
-struct Set *get_set(struct Set all_nums)
+struct Set get_set(struct Set all_nums)
 {
 
     /*initialize the set*/
@@ -61,6 +61,8 @@ struct Set *get_set(struct Set all_nums)
             set.numbers[set.length - 1] = num;
         }
     } while (num != EOF);
+
+    return set;
 }
 
 /*
