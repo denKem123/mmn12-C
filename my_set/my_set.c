@@ -73,6 +73,8 @@ struct Set get_set(struct Set *all_nums)
 */
 void print_set(struct Set set)
 {
+    printf("%d", set.length);
+    /*
     int i;
     for (i = 0; i < set.length; i++)
     {
@@ -80,6 +82,7 @@ void print_set(struct Set set)
             printf(",");
         printf("%d", set.numbers[i]);
     }
+    */
 }
 
 void resize_set(struct Set *set)
