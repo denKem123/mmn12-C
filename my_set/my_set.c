@@ -45,14 +45,14 @@ struct Set get_set(struct Set all_nums)
     set.length = 0;
     set.numbers = (int *)malloc(0);
 
-    printf("%s", "Enter as many numbers as you want to create a set out of them,\nto stop please enter EOF:");
+    printf("%s", "Enter as many numbers as you want to create a set out of them,\nto stop please enter EOF:\n");
 
     do
     {
         scanf("%d", &num);
         isNumFound = 0;
         resize_set(all_nums);
-        /*all_nums.numbers[all_nums.length - 1] = num;*/
+        all_nums.numbers[all_nums.length - 1] = num;
 
         for (i = 0; i < set.length; i++)
             isNumFound = isNumFound || set.numbers[i] == num ? 1 : 0;
