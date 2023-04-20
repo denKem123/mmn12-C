@@ -12,7 +12,7 @@ typedef struct Set
 
 struct Set get_set(struct Set all_nums);
 void print_set(struct Set set);
-void resize_set(struct Set set);
+void resize_set(struct Set *set);
 
 int main()
 {
@@ -51,7 +51,7 @@ struct Set get_set(struct Set all_nums)
     {
         scanf("%d", &num);
         isNumFound = 0;
-        resize_set(all_nums);
+        resize_set(&all_nums);
         /*all_nums.numbers[all_nums.length - 1] = num;*/
         printf("%d", all_nums.length);
 
@@ -82,13 +82,13 @@ void print_set(struct Set set)
     }
 }
 
-void resize_set(struct Set set)
+void resize_set(struct Set *set)
 {
     int *numbersHolder;
-    set.length = SIZE_ENLARGE(set.length);
-    numbersHolder = (int *)realloc(set.numbers, set.length * sizeof(int));
+    set->length = SIZE_ENLARGE(set->length);
+    numbersHolder = (int *)realloc(set->numbers, set->length * sizeof(int));
     if (numbersHolder)
     {
-        set.numbers = numbersHolder;
+        set->numbers = numbersHolder;
     }
 }
