@@ -53,6 +53,7 @@ struct Set get_set(struct Set all_nums)
         isNumFound = 0;
         resize_set(all_nums);
         all_nums.numbers[all_nums.length - 1] = num;
+        printf("%d", num);
 
         for (i = 0; i < set.length; i++)
             isNumFound = isNumFound || set.numbers[i] == num ? 1 : 0;
@@ -84,10 +85,8 @@ void print_set(struct Set set)
 void resize_set(struct Set set)
 {
     int *numbersHolder;
-    printf("%d", set.length);
     set.length = SIZE_ENLARGE(set.length);
     numbersHolder = (int *)realloc(set.numbers, set.length * sizeof(int));
-    printf("%d", set.length);
     if (!numbersHolder)
     {
         set.numbers = numbersHolder;
