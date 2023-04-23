@@ -39,21 +39,22 @@ int main()
 */
 struct Set get_set(struct Set *all_nums)
 {
-    int num, i, isNumFound = 0;
+    int num, isNumExist = 0;
+    int *p;
     struct Set set;
     set = initialize_set();
     printf("%s", "Enter as many numbers as you want to create a set out of them,\nto stop please enter EOF:\n");
 
     while (scanf("%d", &num) != EOF && num != EOF)
     {
-        isNumFound = 0;
+        isNumExist = 0;
         resize_set(all_nums);
         all_nums->numbers[all_nums->length - 1] = num;
 
-        for (i = 0; i < set.length; i++)
-            isNumFound = isNumFound || set.numbers[i] == num ? 1 : 0;
+        for (p = set.numbers; p < set.numbers + set.length; p++)
+            isNumExist = isNumExist || *p == num ? 1 : 0;
 
-        if (!isNumFound)
+        if (!isNumExist)
         {
             resize_set(&set);
             set.numbers[set.length - 1] = num;
