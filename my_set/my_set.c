@@ -72,7 +72,7 @@ void print_set(struct Set set)
     int *p;
     for (p = set.numbers; p < set.numbers + set.length; p++)
     {
-        if (p == set.numbers)
+        if (p != set.numbers)
             printf(",");
         printf("%d", *p);
     }
