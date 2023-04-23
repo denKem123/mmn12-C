@@ -69,12 +69,12 @@ struct Set get_set(struct Set *all_nums)
 void print_set(struct Set set)
 {
 
-    int i;
-    for (i = 0; i < set.length; i++)
+    int *p;
+    for (p = set.numbers; p < set.numbers + set.length; p++)
     {
-        if (i)
+        if (p == set.numbers)
             printf(",");
-        printf("%d", set.numbers[i]);
+        printf("%d", *p);
     }
     printf("\n");
 }
