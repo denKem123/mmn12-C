@@ -97,7 +97,7 @@ void resize_list(struct List *list)
 {
     int *numbersHolder;
     int size = SIZE_ENLARGE(list->length);
-    numbersHolder = (int *)realloc(list->numbers, list->length * sizeof(int));
+    numbersHolder = (int *)realloc(list->numbers, size * sizeof(int));
     if (numbersHolder)
     {
         list->numbers = numbersHolder;
