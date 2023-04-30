@@ -100,7 +100,6 @@ void resize_list(struct List *list)
     numbersHolder = (int *)realloc(list->numbers, list->length * sizeof(int));
     if (numbersHolder)
     {
-        free(list->numbers);
         list->numbers = numbersHolder;
         list->length = size;
     }
