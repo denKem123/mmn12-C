@@ -43,7 +43,7 @@ void get_set(struct List *all_nums, struct List *set)
     int *p;
     printf("%s", "Enter numbers to create a set out of them,\nto stop please enter EOF:\n");
 
-    while (scanf("%d", &num) != EOF && num != EOF)
+    while (scanf("%d", &num) != EOF)
     {
         isNumExist = 0;
         resize_list(all_nums);
