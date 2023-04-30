@@ -45,9 +45,10 @@ void get_set(struct List *all_nums, struct List *set)
 
     while (scanf("%d", &num) != EOF)
     {
-        isNumExist = 0;
         resize_list(all_nums);
         all_nums->numbers[all_nums->length - 1] = num;
+
+        isNumExist = 0;
 
         /*check if the current num already exist in the set array*/
         for (p = set->numbers; p < set->numbers + set->length; p++)
@@ -96,11 +97,13 @@ void print_list(struct List arr)
 void resize_list(struct List *list)
 {
     int *numbersHolder;
-    list->length = SIZE_ENLARGE(list->length);
+    int size = SIZE_ENLARGE(list->length);
     numbersHolder = (int *)realloc(list->numbers, list->length * sizeof(int));
     if (numbersHolder)
     {
+        free(list->numbers);
         list->numbers = numbersHolder;
+        list->length = size;
     }
 }
 
