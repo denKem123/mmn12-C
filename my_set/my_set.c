@@ -6,6 +6,13 @@ struct List
     int length;
 };
 
+void get_set(struct List *all_nums, struct List *set);
+void print_set(struct List set);
+void print_list(struct List set);
+void resize_list(struct List *set);
+struct List initialize_list();
+
+
 int main()
 {
     struct List all_nums = initialize_list();
