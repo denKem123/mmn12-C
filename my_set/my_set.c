@@ -12,6 +12,7 @@ struct List
 
 void get_set(struct List *all_nums, struct List *set);
 void print_set(struct List set);
+void print_list(struct List set);
 void resize_list(struct List *set);
 struct List initialize_list();
 
@@ -61,8 +62,6 @@ void get_set(struct List *all_nums, struct List *set)
             set->numbers[set->length - 1] = num;
         }
     }
-
-    return set;
 }
 
 /*
