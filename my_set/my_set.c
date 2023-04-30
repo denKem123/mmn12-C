@@ -41,7 +41,7 @@ void get_set(struct List *all_nums, struct List *set)
 {
     int num, isNumExist = 0;
     int *p;
-    printf("%s", "Enter as many numbers as you want to create a set out of them,\nto stop please enter EOF:\n");
+    printf("%s", "Enter numbers to create a set out of them,\nto stop please enter EOF:\n");
 
     while (scanf("%d", &num) != EOF && num != EOF)
     {
